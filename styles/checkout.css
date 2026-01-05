@@ -1,0 +1,82 @@
+/* ===============================
+   CHECKOUT - GLOBAL
+   =============================== */
+
+.checkout-page {
+  background-color: #f8fafc;
+  padding-bottom: 3rem;
+}
+
+/* ===============================
+   NAVBAR (solo checkout)
+   =============================== */
+
+.checkout-page ~ nav,
+nav:has(+ .checkout-page) {
+  background-color: #0f172a !important;
+}
+
+.checkout-page ~ nav .nav-link,
+.checkout-page ~ nav .navbar-brand,
+nav:has(+ .checkout-page) .nav-link,
+nav:has(+ .checkout-page) .navbar-brand {
+  color: #e5e7eb !important;
+}
+
+.checkout-page ~ nav .nav-link:hover {
+  color: #38bdf8 !important;
+}
+
+/* ===============================
+   FOOTER (solo checkout)
+   =============================== */
+
+.footer-creative {
+            background: linear-gradient(135deg, #383a3d 0%, #020e20 100%); /* Fondo degradado */
+            color: white;
+            border-top-left-radius: 2rem;
+            border-top-right-radius: 2rem;
+        }
+
+
+/* ===============================
+   CHECKOUT CARDS
+   =============================== */
+
+.checkout-page .checkout-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+/* ===============================
+   INPUTS
+   =============================== */
+
+.checkout-page .form-control,
+.checkout-page .form-select {
+  font-size: 0.9rem;
+  padding: 0.45rem 0.6rem;
+}
+
+/* ===============================
+   BOTONES
+   =============================== */
+
+.checkout-page .btn-primary {
+  background-color: #2563eb;
+  border: none;
+}
+
+.checkout-page .btn-primary:hover {
+  background-color: #1e40af;
+}
+
+/* ===============================
+   RESUMEN
+   =============================== */
+
+.checkout-page .checkout-summary {
+  position: sticky;
+  top: 90px;
+}

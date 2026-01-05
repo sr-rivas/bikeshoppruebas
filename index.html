@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BikeShop - Tienda de Bicicletas</title>
+    <meta name="description" content="Las mejores bicicletas del mercado lo encuentras aqui en BikeShop.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <!-- Logo y Nombre -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="bi bi-bicycle fs-3 me-2 text-primary"></i>
+                <span class="fw-bold">BikeShop</span>
+            </a>
+            
+            <!-- Toggle para móvil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Menú de navegación -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">INICIO</a>
+                    </li>
+                    <!-- Dropdown de Bicicletas -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="bicicletas.html" id="bicicletasDropdown" role="button" data-bs-toggle="dropdown">
+                            BICICLETAS
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="bicicletas.html?cat=montana">Montaña</a></li>
+                            <li><a class="dropdown-item" href="bicicletas.html?cat=ruta">Ruta</a></li>
+                            <li><a class="dropdown-item" href="bicicletas.html?cat=hibrida">Híbridas</a></li>
+                            <li><a class="dropdown-item" href="bicicletas.html?cat=urbana">Urbanas</a></li>
+                            <li><a class="dropdown-item" href="bicicletas.html?cat=bmx">BMX</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="accesorios.html">ACCESORIOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">SERVICIOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre-nosotros.html">SOBRE NOSOTROS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">CONTACTO</a>
+                    </li>
+                </ul>
+                
+                <!-- Iconos de la derecha -->
+                <div class="d-flex align-items-center gap-3">
+                    <!-- Buscador -->
+                    <button class="btn btn-link text-dark" id="searchBtn">
+                        <i class="bi bi-search fs-5"></i>
+                    </button>
+                    <!-- Carrito -->
+                    <a href="carrito.html" class="btn btn-link text-dark position-relative">
+                        <i class="bi bi-cart3 fs-5"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">0</span>
+                    </a>
+                    <!-- Perfil -->
+                    <a href="perfil.html" class="btn btn-link text-dark">
+                        <i class="bi bi-person fs-5"></i>
+                    </a>
+                    <!-- Redes Sociales -->
+                    <a href="#" class="social-icon">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Barra de búsqueda desplegable -->
+    <div class="search-bar" id="searchBar">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchInput" placeholder="Buscar productos...">
+                        <button class="btn btn-primary" onclick="searchProducts()">
+                            <i class="bi bi-search"></i>
+                        </button>
+                        <button class="btn btn-secondary" id="closeSearch">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
+                    <!-- Resultados de búsqueda -->
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section con Video/Imagen -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <video autoplay muted loop class="hero-video">
+            <source src="bike.mp4" type="video/mp4">
+        </video>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-8 text-white">
+                    <!-- Título con animación -->
+                    <h1 class="display-1 fw-bold mb-4 fade-in-text">Tu Aventura Comienza Aquí</h1>
+                    <p class="lead mb-5 fade-in-text">Descubre la bicicleta perfecta para tu estilo de vida</p>
+                    
+                    <!-- Botones de categorías semitransparentes -->
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="bicicletas.html?cat=montana" class="btn btn-hero">
+                            <i class="bi bi-mountain me-2"></i>Montaña
+                        </a>
+                        <a href="bicicletas.html?cat=ruta" class="btn btn-hero">
+                            <i class="bi bi-sign-turn-right me-2"></i>Ruta
+                        </a>
+                        <a href="bicicletas.html?cat=hibrida" class="btn btn-hero">
+                            <i class="bi bi-bicycle me-2"></i>Híbridas
+                        </a>
+                        <a href="bicicletas.html?cat=urbana" class="btn btn-hero">
+                            <i class="bi bi-building me-2"></i>Urbanas
+                        </a>
+                        <a href="bicicletas.html?cat=bmx" class="btn btn-hero">
+                            <i class="bi bi-stars me-2"></i>BMX
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mensaje de Bienvenida -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="fw-bold mb-3">Bienvenido a BikeShop</h2>
+                    <p class="text-muted">Somos tu tienda de confianza para encontrar la bicicleta perfecta. Con más de 10 años de experiencia, ofrecemos las mejores marcas y un servicio excepcional para todos los ciclistas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrusel Infinito de Categorías -->
+    <section class="py-5">
+        <div class="container-fluid">
+            <div class="category-carousel">
+                <div class="category-track">
+                    <!-- Categorías duplicadas para efecto infinito -->
+                    <div class="category-item" data-category="montana">
+                        <i class="bi bi-mountain"></i>
+                        <span>Montaña</span>
+                        <div class="category-submenu">
+                            <h5>Bicicletas de Montaña</h5>
+                            <p>Perfectas para terrenos difíciles y aventuras off-road</p>
+                        </div>
+                    </div>
+                    <div class="category-item" data-category="ruta">
+                        <i class="bi bi-sign-turn-right"></i>
+                        <span>Ruta</span>
+                        <div class="category-submenu">
+                            <h5>Bicicletas de Ruta</h5>
+                            <p>Diseñadas para velocidad en carreteras pavimentadas</p>
+                        </div>
+                    </div>
+                    <div class="category-item" data-category="hibrida">
+                        <i class="bi bi-bicycle"></i>
+                        <span>Híbridas</span>
+                        <div class="category-submenu">
+                            <h5>Bicicletas Híbridas</h5>
+                            <p>Versatilidad para ciudad y caminos ligeros</p>
+                        </div>
+                    </div>
+                    <div class="category-item" data-category="urbana">
+                        <i class="bi bi-building"></i>
+                        <span>Urbanas</span>
+                        <div class="category-submenu">
+                            <h5>Bicicletas Urbanas</h5>
+                            <p>Ideales para el día a día en la ciudad</p>
+                        </div>
+                    </div>
+                    <div class="category-item" data-category="bmx">
+                        <i class="bi bi-stars"></i>
+                        <span>BMX</span>
+                        <div class="category-submenu">
+                            <h5>Bicicletas BMX</h5>
+                            <p>Para acrobacias y estilo libre</p>
+                        </div>
+                    </div>
+                    <!-- Duplicado para carrusel infinito -->
+                    <div class="category-item" data-category="montana">
+                        <i class="bi bi-graph-down"></i>
+                        <span>Montaña</span>
+                        <div class="category-submenu">
+                            <h5>Bicicletas de Montaña</h5>
+                            <p>Perfectas para terrenos difíciles y aventuras off-road</p>
+                        </div>
+                    </div>
+                    <div class="category-item" data-category="ruta">
+                        <i class="bi bi-sign-turn-right"></i>
+                        <span>Ruta</span>
+                        <div class="category-submenu">
+                            <h5>Bicicletas de Ruta</h5>
+                            <p>Diseñadas para velocidad en carreteras pavimentadas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banners de Ofertas -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="offer-banner">
+                        <img src="img promo/30-descuento-promocion_2227-146.avif" alt="Oferta" class="w-100">
+                        <div class="offer-content">
+                            <h3>¡Hasta 30% OFF!</h3>
+                            <p>En bicicletas seleccionadas</p>
+                            <a href="bicicletas.html" class="btn btn-light">Ver Ofertas</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="offer-banner">
+                        <img src="img promo/pormo2x1.jpg" alt="Oferta" class="w-100">
+                        <div class="offer-content">
+                            <h3>Accesorios 2x1</h3>
+                            <p>Lleva dos al precio de uno</p>
+                            <a href="accesorios.html" class="btn btn-light">Comprar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos Destacados -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">Productos Destacados</h2>
+            
+            <!-- Pestañas de filtro -->
+            <ul class="nav nav-pills justify-content-center mb-4" id="productTabs">
+                <li class="nav-item">
+                    <button class="nav-link active" data-filter="nuevos">Nuevos</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-filter="vendidos">Más Vendidos</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-filter="ofertas">En Oferta</button>
+                </li>
+            </ul>
+
+            <!-- Grid de productos -->
+            <div class="row g-4" id="productsGrid">
+                <!-- Los productos se cargarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrusel de Marcas -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h3 class="text-center mb-4">Marcas que Trabajamos</h3>
+            <div class="brands-carousel">
+                <div class="brand-item">
+                    <img src="img marcas y opniones/marcacube.webp" alt="Marca 1">
+                </div>
+                <div class="brand-item">
+                    <img src="img marcas y opniones/marcaeagle.webp" alt="Marca 2">
+                </div>
+                <div class="brand-item">
+                    <img src="img marcas y opniones/marcatime.jpg" alt="Marca 3">
+                </div>
+                <div class="brand-item">
+                    <img src="img marcas y opniones/marcatrek.png" alt="Marca 4">
+                </div>
+                <div class="brand-item">
+                    <img src="img marcas y opniones/marcamontain.avif" alt="Marca 5">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">Lo Que Dicen Nuestros Clientes</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="stars mb-3">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <p class="mb-3">"Excelente servicio y la mejor selección de bicicletas. Encontré exactamente lo que buscaba y el personal fue muy amable."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="img marcas y opniones/usuaria.png" alt="Cliente" class="rounded-circle me-3">
+                            <div>
+                                <strong>María González</strong>
+                                <div class="text-muted small">Cliente Verificado</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="stars mb-3">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <p class="mb-3">"Compré una bicicleta de montaña hace 6 meses y ha sido perfecta. El servicio post-venta es increíble."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="img marcas y opniones/u.png" alt="Cliente" class="rounded-circle me-3">
+                            <div>
+                                <strong>Carlos Rodríguez</strong>
+                                <div class="text-muted small">Cliente Verificado</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="stars mb-3">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <p class="mb-3">"Los precios son competitivos y la calidad excepcional. Definitivamente mi tienda de bicicletas favorita."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="img marcas y opniones/usuaria.png" alt="Cliente" class="rounded-circle me-3">
+                            <div>
+                                <strong>Ana Martínez</strong>
+                                <div class="text-muted small">Cliente Verificado</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón WhatsApp antes del Footer -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h3 class="mb-3">¿Necesitas Ayuda para Elegir?</h3>
+            <p class="mb-4">Conversa con uno de nuestros expertos en ciclismo</p>
+            <a href="https://wa.me/593999999999" target="_blank" class="btn btn-light btn-lg">
+                <i class="bi bi-whatsapp me-2"></i>Chatear en WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="footer-creative pt-5 pb-4 mt-5">
+            <div class="container">
+                <div class="row">
+                    <!-- Columna del Logo/Nombre -->
+                     <div class="col-md-4 mb-4 mb-md-0">
+                        <h5 class="text-2xl font-bold mb-3 d-flex align-items-center">
+                            <span class="text-3xl me-2"></span> BikeShop
+                        </h5>
+                        <p class="text-gray-300">Tu tienda de confianza para encontrar la bicicleta perfecta. Calidad, variedad y el mejor servicio al cliente.</p>
+                    </div>
+                    <!-- Columna de Enlaces Rápidos -->
+                 
+                    <div class="col-6 col-md-2 mb-4 mb-md-0">
+                    
+                        <h5 class="font-bold mb-3 text-white">Secciones</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="index.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Inicio</a></li>
+                            <li class="mb-2"><a href="bicicletas.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Bicicletas</a></li>
+                            <li class="mb-2"><a href="accesorios.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Accesorios</a></li>
+                            <li class="mb-2"><a href="servicios.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Servicios</a></li>
+                        </ul>
+                    </div>
+                    <!-- Columna de Legal/Contacto -->
+                     <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h5 class="font-bold mb-3 text-white">Legal</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="terminos-de-uso.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Términos del Servicio</a></li>
+                            <li class="mb-2"><a href="politica-devolucion.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Política de Devoluciones</a></li>
+                            <li class="mb-2"><a href="informacion-envio.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Informacion de Envio</a></li>
+                            <li class="mb-2"><a href="proteccion-datos.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Protcción de Datos</a></li>
+                            <li class="mb-2"><a href="preguntas-frecuentes.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Preguntas Frecuentes</a></li>
+                        </ul>
+                    </div>
+                    <!-- Columna Síguenos (para mantener un formato consistente con el nav) -->
+                     <div class="col-md-3">
+                        <h5 class="font-bold mb-3 text-white">Síguenos o Contactanos</h5>
+                        <div class="social-icons d-none d-lg-flex align-items-center gap-3 ms-3">
+                            <a href="https://facebook.com" class="text-white fs-5" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="https://instagram.com" class="text-white fs-5" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="https://youtube.com" class="text-white fs-5" aria-label="Youtube"><i class="bi bi-youtube"></i></a>
+                            <a href="https://tiktok.com" class="text-white fs-5" aria-label="tiktok"><i class="bi bi-tiktok"></i></a>
+                        </div>
+                        <div>
+                            <p class="text-gray-300"><i class="bi bi-telephone me-2"></i>+59399999999</p>
+                            <p class="text-gray-300"><i class="bi bi-envelope me-2"></i>info@bikeshop.com</p>
+                            <p class="text-gray-300"><i class="bi bi-geo-alt me-2"></i>Av. Principal 123</p>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                      <img src="img_tarjetas.webp" 
+                      alt="Tarjetas aceptadas" 
+                      class="img-fluid" 
+                      style="max-width: 220px;">
+                    </div>
+
+                </div>
+                <hr class="my-4 border-gray-600">
+                <!-- Derechos de Autor y Slogan -->
+                 <div class="text-center">
+                    <p class="mb-0 text-sm text-gray-400">&copy; 2025. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+   
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script/script.js"></script>
+</body>
+</html>
