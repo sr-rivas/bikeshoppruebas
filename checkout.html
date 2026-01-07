@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - BikeShop</title>
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles/checkout.css" />
+  </head>
+  <body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <i class="bi bi-bicycle fs-3 me-2"></i>
+          <span class="fw-bold">BikeShop</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="carrito.html">
+                <i class="bi bi-cart3"></i>
+                <span class="cart-badge" id="cartCount">0</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="py-5">
+      <div class="container">
+        <h2 class="mb-4 text-center">Finalizar Compra</h2>
+
+        <div class="row">
+          <!-- Formulario de Datos -->
+          <div class="col-lg-7">
+            <div class="checkoud-card p-3 mb-4">
+              <h4 class="mb-4">
+                <i class="bi bi-person-circle me-2"></i>Información de Contacto
+              </h4>
+              <form id="checkoutForm">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="nombre" class="form-label">Nombre Completo *</label>
+                    <input type="text" class="form-control" id="nombre" required />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Correo Electrónico *</label>
+                    <input type="email" class="form-control" id="email" required />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="telefono" class="form-label">Teléfono *</label>
+                    <input type="tel" class="form-control" id="telefono" required />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="identificacion" class="form-label">Identificación *</label>
+                    <input type="text" class="form-control" id="identificacion" required />
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="checkoud-card p-3 mb-4">
+              <h4 class="mb-4">
+                <i class="bi bi-geo-alt me-2"></i>Dirección de Envío
+              </h4>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="provincia" class="form-label">Provincia *</label>
+                  <select class="form-select" id="provincia" required>
+                    <option value="">Seleccionar</option>
+                    <option value="Azuay">Azuay</option>
+                    <option value="Bolivar">Bolivar</option>
+                    <option value="Cañar">Cañar</option>
+                    <option value="Carchi">Carchi</option>
+                    <option value="Chimborazon">Chimborazo</option>
+                    <option value="Cotopaxi">Cotopaxi</option>
+                    <option value="El-Oro">El Oro</option>
+                    <option value="Esmeraldas">Esmeraldas</option>
+                    <option value="Galapagos">Galápagos</option>
+                    <option value="Imbabura">Imbabura</option>
+                    <option value="Loja">Loja</option>
+                    <option value="Los-Rios">Los Ríos</option>
+                    <option value="Manabi">Manabí</option>
+                    <option value="Morona-Santiago">Morona Santiago</option>
+                    <option value="Napo">Napo</option>
+                    <option value="Orellana">Orellana</option>
+                    <option value="Pastaza">Pastaza</option>
+                    <option value="Pichincha">Pichincha</option>
+                    <option value="Santa-Elena">Santa Elena</option>
+                    <option value="sto-Domingo">Sto. Domingo</option>
+                    <option value="Sucumbios">Sucumbios</option>
+                    <option value="Tungurahua">Tungurahua</option>
+                    <option value="Zamora-Chinchipe">Zamora Chinchipe</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="canton" class="form-label">Cantón *</label>
+                  <input type="text" class="form-control" id="canton" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="parroquia" class="form-label">Parroquia *</label>
+                  <input type="text" class="form-control" id="parroquia" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="codigoPostal" class="form-label">Código Postal</label>
+                  <input type="text" class="form-control" id="codigoPostal" />
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="direccionDetallada" class="form-label">Dirección Detallada *</label>
+                  <textarea class="form-control" id="direccionDetallada" rows="2" required></textarea>
+                  <small class="text-muted">Incluye señas específicas para facilitar la entrega</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="checkoud-card p-3 mb-4">
+              <h4 class="mb-4">
+                <i class="bi bi-credit-card me-2"></i>Método de Pago
+              </h4>
+              <div class="form-check mb-3">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="metodoPago"
+                  id="pagoEfectivo"
+                  value="efectivo"
+                  checked
+                />
+                <label class="form-check-label" for="pagoEfectivo">
+                  <i class="bi bi-cash-coin me-2"></i>Pago Contra Entrega (Efectivo o Tarjeta)
+                </label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="metodoPago" id="pagoTransferencia" value="transferencia" />
+                <label class="form-check-label" for="pagoTransferencia">
+                  <i class="bi bi-bank me-2"></i>Transferencia Bancaria / De una Móvil
+                </label>
+              </div>
+
+              <!-- Panel de información de transferencia (oculto por defecto) -->
+              <div class="alert alert-info" id="infoTransferencia" style="display: none">
+                <h6>Información para Transferencia:</h6>
+                <p class="mb-1"><strong>Banco:</strong> Banco Pichincha</p>
+                <p class="mb-1"><strong>Cuenta:</strong> 9999999999</p>
+                <p class="mb-1"><strong>Móvil:</strong> 0999999999</p>
+                <p class="mb-1"><strong>A nombre de:</strong> BikeShop Ec</p>
+                <small>Por favor envía el comprobante por WhatsApp al realizar la transferencia</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resumen de Pedido -->
+          <div class="col-lg-5">
+            <div class="checkout-card p-3 checkout-summary">
+              <h4 class="mb-4">
+                <i class="bi bi-bag-check me-2"></i>Resumen de Pedido
+              </h4>
+
+              <!-- Productos -->
+              <div id="resumenProductos" class="mb-3">
+                <!-- Se cargará dinámicamente -->
+              </div>
+
+              <hr />
+
+              <!-- Totales -->
+              <div class="d-flex justify-content-between mb-2">
+                <span>Subtotal:</span>
+                <strong id="resumenSubtotal">$0.00</strong>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>IVA (15%):</span>
+                <strong id="resumenIva">$0.00</strong>
+              </div>
+              <div class="d-flex justify-content-between mb-3">
+                <span>Envío:</span>
+                <strong id="resumenEnvio">$15.00</strong>
+              </div>
+              <hr />
+              <div class="d-flex justify-content-between mb-4">
+                <h5>Total:</h5>
+                <h5 class="text-primary" id="resumenTotal">$0.00</h5>
+              </div>
+
+              <!-- Botón de Confirmar -->
+              <button class="btn btn-primary btn-lg w-100 mb-3" id="btnConfirmarPedido">
+                <i class="bi bi-check-circle me-2"></i>Confirmar Pedido
+              </button>
+
+              <a href="carrito.html" class="btn btn-outline-secondary w-100">
+                <i class="bi bi-arrow-left me-2"></i>Volver al Carrito
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+<footer class="footer-creative pt-5 pb-4 mt-5">
+            <div class="container">
+                <div class="row">
+                    <!-- Columna del Logo/Nombre -->
+                     <div class="col-md-4 mb-4 mb-md-0">
+                        <h5 class="text-2xl font-bold mb-3 d-flex align-items-center">
+                            <span class="text-3xl me-2"></span> BikeShop
+                        </h5>
+                        <p class="text-gray-300">Tu tienda de confianza para encontrar la bicicleta perfecta. Calidad, variedad y el mejor servicio al cliente.</p>
+                    </div>
+                    <!-- Columna de Enlaces Rápidos -->
+                 
+                    <div class="col-6 col-md-2 mb-4 mb-md-0">
+                    
+                        <h5 class="font-bold mb-3 text-white">Secciones</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="index.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Inicio</a></li>
+                            <li class="mb-2"><a href="bicicletas.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Bicicletas</a></li>
+                            <li class="mb-2"><a href="accesorios.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Accesorios</a></li>
+                            <li class="mb-2"><a href="servicios.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Servicios</a></li>
+                        </ul>
+                    </div>
+                    <!-- Columna de Legal/Contacto -->
+                     <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h5 class="font-bold mb-3 text-white">Legal</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="terminos-de-uso.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Términos del Servicio</a></li>
+                            <li class="mb-2"><a href="politica-devolucion.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Política de Devoluciones</a></li>
+                            <li class="mb-2"><a href="informacion-envio.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Informacion de Envio</a></li>
+                            <li class="mb-2"><a href="proteccion-datos.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Protcción de Datos</a></li>
+                            <li class="mb-2"><a href="preguntas-frecuentes.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Preguntas Frecuentes</a></li>
+                        </ul>
+                    </div>
+                    <!-- Columna Síguenos (para mantener un formato consistente con el nav) -->
+                     <div class="col-md-3">
+                        <h5 class="font-bold mb-3 text-white">Síguenos</h5>
+                        <div class="social-icons d-none d-lg-flex align-items-center gap-3 ms-3">
+                            <a href="https://facebook.com" class="text-white fs-5" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="https://instagram.com" class="text-white fs-5" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="https://youtube.com" class="text-white fs-5" aria-label="Youtube"><i class="bi bi-youtube"></i></a>
+                            <a href="https://tiktok.com" class="text-white fs-5" aria-label="tiktok"><i class="bi bi-tiktok"></i></a>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                      <img src="img_tarjetas.webp" 
+                      alt="Tarjetas aceptadas" 
+                      class="img-fluid" 
+                      style="max-width: 220px;">
+                    </div>
+
+                </div>
+                <hr class="my-4 border-gray-600">
+                <!-- Derechos de Autor y Slogan -->
+                 <div class="text-center">
+                    <p class="mb-0 text-sm text-gray-400">&copy; 2025. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+            <!-- Botón de WhatsApp -->
+             <a
+             href="https://wa.me/5939999999999?text=Hola%2C%20quisiera%20más%20información"
+             class="whatsapp-btn"
+             target="_blank"
+             aria-label="Contactar por WhatsApp">
+             <i class="bi bi-whatsapp"></i>
+            </a>
+    </div>
+    <!-- Modal de Confirmación -->
+    <div class="modal fade" id="confirmacionModal" tabindex="-1" aria-labelledby="confirmacionModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="confirmacionModalLabel">
+              <i class="bi bi-check-circle-fill me-2"></i>Pedido Confirmado
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center py-4">
+            <i class="bi bi-check-circle-fill text-success" style="font-size: 4rem"></i>
+            <h4 class="mt-3 mb-3">¡Gracias por tu compra!</h4>
+            <div id="resumenPedidoModal" class="text-start">
+              <!-- Se cargará dinámicamente -->
+            </div>
+            <p class="text-muted mt-3">
+              Recibirás un correo de confirmación con los detalles de tu pedido. Nos pondremos en contacto contigo pronto.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <a href="perfil.html" class="btn btn-primary">Ver Mis Pedidos</a>
+            <a href="index.html" class="btn btn-outline-secondary">Volver al Inicio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript principal -->
+    <script src="script/script.js"></script>
+
+    <!-- JavaScript de checkout -->
+    <script src="jscheckout/checkout.js"></script>
+  </body>
+</html>
