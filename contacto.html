@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - BikeShop</title>
+    <meta name="description" content="Ponte en contacto con nosotros para una mejor experiencia.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="bi bi-bicycle fs-3 me-2 text-primary"></i>
+                <span class="fw-bold">BikeShop</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="bicicletas.html" role="button" data-bs-toggle="dropdown">BICICLETAS</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="bicicletas.html?categoria=montana">Montaña</a></li>
+                            <li><a class="dropdown-item" href="bicicletas.html?categoria=ruta">Ruta</a></li>
+                            <li><a class="dropdown-item" href="bicicletas.html?categoria=hibrida">Híbridas</a></li>
+                            <li><a class="dropdown-item" href="bicicletas.html?categoria=urbana">Urbanas</a></li>
+                            <li><a class="dropdown-item" href="bicicletas.html?categoria=bmx">BMX</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="accesorios.html">ACCESORIOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicios.html">SERVICIOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre-nosotros.html">SOBRE NOSOTROS</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contacto.html">CONTACTO</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="carrito.html" class="position-relative me-3">
+                        <i class="bi bi-cart3 fs-5 social-icon"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">0</span>
+                    </a>
+                    <a href="perfil.html" class="me-3"><i class="bi bi-person-circle fs-5 social-icon"></i></a>
+                    <a href="#" class="social-icon me-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-icon me-2"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-icon me-2"><i class="bi bi-tiktok"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de bienvenida -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">Contáctanos</h1>
+            <p class="lead text-muted">Estamos aquí para ayudarte. Envíanos un mensaje y te responderemos lo antes posible.</p>
+        </div>
+    </section>
+    <!-- Sección principal de contacto más compacta -->
+    <section class="py-4">
+        <div class="container">
+            <div class="row g-3">
+                <!-- Columna izquierda: Información de contacto en 2 columnas -->
+                <div class="col-lg-4">
+                    <div class="row g-3">
+                        <!-- Dirección -->
+                        <div class="col-6">
+                            <div class="product-card text-center h-100 p-3">
+                                <i class="bi bi-geo-alt-fill text-primary fs-3 mb-2"></i>
+                                <h6 class="mb-2">Dirección</h6>
+                                <p class="card-text text-muted small mb-0">Av. Principal 123<br>Centro Comercial Plaza<br>Local 45</p>
+                            </div>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="col-6">
+                            <div class="product-card text-center h-100 p-3">
+                                <i class="bi bi-telephone-fill text-primary fs-3 mb-2"></i>
+                                <h6 class="mb-2">Teléfono</h6>
+                                <p class="card-text text-muted small mb-0">
+                                    +123 456 7890<br>
+                                    WhatsApp:<br>+123 456 7892
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Correo -->
+                        <div class="col-6">
+                            <div class="product-card text-center h-100 p-3">
+                                <i class="bi bi-envelope-fill text-primary fs-3 mb-2"></i>
+                                <h6 class="mb-2">Correo</h6>
+                                <p class="card-text text-muted small mb-0">
+                                    info@bikeshop.com<br>
+                                    ventas@bikeshop.com
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Horario -->
+                        <div class="col-6">
+                            <div class="product-card text-center h-100 p-3">
+                                <i class="bi bi-clock-fill text-primary fs-3 mb-2"></i>
+                                <h6 class="mb-2">Horario</h6>
+                                <p class="card-text text-muted small mb-0">
+                                    Lun-Vie: 9AM - 7PM<br>
+                                    Sáb: 10AM - 6PM<br>
+                                    Dom: 10AM - 2PM
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna derecha: Formulario de contacto más compacto -->
+                <div class="col-lg-8">
+                    <div class="product-card h-100">
+                        <div class="card-body p-3">
+                            <h5 class="mb-3"><i class="bi bi-envelope me-2"></i>Envíanos un Mensaje</h5>
+                            <form id="contactForm">
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <label for="nombre" class="form-label small mb-1">Nombre Completo *</label>
+                                        <input type="text" class="form-control form-control-sm" id="nombre" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label small mb-1">Correo Electrónico *</label>
+                                        <input type="email" class="form-control form-control-sm" id="email" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="asunto" class="form-label small mb-1">Asunto *</label>
+                                        <input type="text" class="form-control form-control-sm" id="asunto" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="mensaje" class="form-label small mb-1">Mensaje *</label>
+                                        <textarea class="form-control form-control-sm" id="mensaje" rows="4" required></textarea>
+                                    </div>
+                                    <div class="col-12 mt-2">
+                                        <button type="submit" class="btn btn-primary w-100">
+                                            <i class="bi bi-send me-2"></i>Enviar Mensaje
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa de ubicación más compacto con altura fija -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <h5 class="text-center mb-3"><i class="bi bi-geo-alt me-2"></i>Nuestra Ubicación</h5>
+            <div class="rounded overflow-hidden shadow-sm" style="height: 300px;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d510694.03687056445!2d-78.76020166051785!3d-0.1865912614076823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a4002427c9f%3A0x44b991e158ef5572!2sQuito!5e0!3m2!1ses-419!2sec!4v1767931822414!5m2!1ses-419!2sec" 
+                    style="border:0; width: 100%; height: 100%;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Botón de WhatsApp -->
+    <section class="py-5 bg-success text-white">
+        <div class="container text-center">
+            <h3 class="mb-3">¿Prefieres chatear directamente?</h3>
+            <p class="mb-4">Conversa con uno de nuestros expertos por WhatsApp</p>
+            <a href="https://wa.me/593999999999" target="_blank" class="btn btn-light btn-lg">
+                <i class="bi bi-whatsapp me-2"></i>Chatear por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="footer-creative pt-5 pb-4 mt-5">
+            <div class="container">
+                <div class="row">
+                    <!-- Columna del Logo/Nombre -->
+                     <div class="col-md-4 mb-4 mb-md-0">
+                        <h5 class="text-2xl font-bold mb-3 d-flex align-items-center">
+                            <span class="text-3xl me-2"></span> BikeShop
+                        </h5>
+                        <p class="text-gray-300">Tu tienda de confianza para encontrar la bicicleta perfecta. Calidad, variedad y el mejor servicio al cliente.</p>
+                    </div>
+                    <!-- Columna de Enlaces Rápidos -->
+                 
+                    <div class="col-6 col-md-2 mb-4 mb-md-0">
+                    
+                        <h5 class="font-bold mb-3 text-white">Secciones</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="index.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Inicio</a></li>
+                            <li class="mb-2"><a href="bicicletas.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Bicicletas</a></li>
+                            <li class="mb-2"><a href="accesorios.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Accesorios</a></li>
+                            <li class="mb-2"><a href="servicios.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Servicios</a></li>
+                        </ul>
+                    </div>
+                    <!-- Columna de Legal/Contacto -->
+                     <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h5 class="font-bold mb-3 text-white">Legal</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="terminos-de-uso.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Términos del Servicio</a></li>
+                            <li class="mb-2"><a href="politica-devolucion.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Política de Devoluciones</a></li>
+                            <li class="mb-2"><a href="informacion-envio.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Informacion de Envio</a></li>
+                            <li class="mb-2"><a href="proteccion-datos.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Protcción de Datos</a></li>
+                            <li class="mb-2"><a href="preguntas-frecuentes.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Preguntas Frecuentes</a></li>
+                        </ul>
+                    </div>
+                    <!-- Columna Síguenos (para mantener un formato consistente con el nav) -->
+                     <div class="col-md-3">
+                        <h5 class="font-bold mb-3 text-white">Síguenos o Contactanos</h5>
+                        <div class="social-icons d-none d-lg-flex align-items-center gap-3 ms-3">
+                            <a href="https://facebook.com" class="text-white fs-5" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="https://instagram.com" class="text-white fs-5" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="https://youtube.com" class="text-white fs-5" aria-label="Youtube"><i class="bi bi-youtube"></i></a>
+                            <a href="https://tiktok.com" class="text-white fs-5" aria-label="tiktok"><i class="bi bi-tiktok"></i></a>
+                        </div>
+                        <div>
+                            <p class="text-gray-300"><i class="bi bi-telephone me-2"></i>+59399999999</p>
+                            <p class="text-gray-300"><i class="bi bi-envelope me-2"></i>info@bikeshop.com</p>
+                            <p class="text-gray-300"><i class="bi bi-geo-alt me-2"></i>Av. Principal 123</p>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                      <img src="img_tarjetas.webp" 
+                      alt="Tarjetas aceptadas" 
+                      class="img-fluid" 
+                      style="max-width: 220px;">
+                    </div>
+
+                </div>
+                <hr class="my-4 border-gray-600">
+                <!-- Derechos de Autor y Slogan -->
+                 <div class="text-center">
+                    <p class="mb-0 text-sm text-gray-400">&copy; 2025. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    <!-- Modal de éxito -->
+    <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">
+                        <i class="bi bi-check-circle me-2"></i>Mensaje Enviado
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <i class="bi bi-check-circle-fill text-success" style="font-size: 3rem;"></i>
+                    <h4 class="mt-3">¡Gracias por contactarnos!</h4>
+                    <p class="text-muted">Hemos recibido tu mensaje. Nuestro equipo te responderá en las próximas 24 horas.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script/script.js"></script>
+    <script src="jscontacto/jscontacto.js"></script>
+</body>
+</html>

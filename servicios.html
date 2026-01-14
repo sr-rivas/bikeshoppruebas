@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - BikeShop</title>
+    <meta name="description" content="Servicos de mante 100% profesional.">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="bi bi-bicycle fs-3 me-2 text-primary"></i>
+                <span class="fw-bold">BikeShop</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="bicicletas.html" role="button" data-bs-toggle="dropdown">BICICLETAS</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="bicicletas.html?categoria=montana">Montaña</a></li>
+                            <li><a class="dropdown-item" href="bicicletas.html?categoria=ruta">Ruta</a></li>
+                            <li><a class="dropdown-item" href="bicicletas.html?categoria=hibrida">Híbridas</a></li>
+                            <li><a class="dropdown-item" href="bicicletas.html?categoria=urbana">Urbanas</a></li>
+                            <li><a class="dropdown-item" href="bicicletas.html?categoria=bmx">BMX</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="accesorios.html">ACCESORIOS</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="servicios.html">SERVICIOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre-nosotros.html">SOBRE NOSOTROS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">CONTACTO</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="carrito.html" class="position-relative me-3">
+                        <i class="bi bi-cart3 fs-5 social-icon"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">0</span>
+                    </a>
+                    <a href="perfil.html" class="me-3"><i class="bi bi-person-circle fs-5 social-icon"></i></a>
+                    <a href="#" class="social-icon me-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-icon me-2"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-icon me-2"><i class="bi bi-tiktok"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de bienvenida -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">Nuestros Servicios</h1>
+            <p class="lead text-muted">Mantenimiento profesional y reparaciones especializadas para mantener tu bicicleta en perfectas condiciones.</p>
+        </div>
+    </section>
+
+    <!-- Sección de servicios -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Servicio 1: Mantenimiento Básico -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card h-100">
+                        <img src="img servicios/mantenimientobasico.jpg" class="card-img-top" alt="Mantenimiento Básico">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-primary mb-2 align-self-start">Mantenimiento</span>
+                            <h5 class="card-title">Mantenimiento Básico</h5>
+                            <p class="card-text text-muted flex-grow-1">Revisión completa, limpieza, lubricación de cadena, ajuste de frenos y cambios.</p>
+                            <div class="mb-2">
+                                <i class="bi bi-clock text-primary me-2"></i>
+                                <span class="small">Duración: 1 hora</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-4 fw-bold text-primary">$25.00</span>
+                                <button class="btn btn-primary btn-sm btn-reservar" data-servicio="Mantenimiento Básico" data-precio="25.00" data-duracion="1 hora">
+                                    Reservar
+                                </button>
+                            </div>
+                            <!-- Formulario de reserva (oculto por defecto) -->
+                            <div class="reserva-form mt-3" style="display: none;">
+                                <hr>
+                                <form class="form-reserva">
+                                    <input type="hidden" name="servicio" value="Mantenimiento Básico">
+                                    <input type="hidden" name="precio" value="25.00">
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control form-control-sm" placeholder="Nombre completo" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="email" class="form-control form-control-sm" placeholder="Correo electrónico" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="tel" class="form-control form-control-sm" placeholder="Teléfono" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="date" class="form-control form-control-sm" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="time" class="form-control form-control-sm" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <textarea class="form-control form-control-sm" rows="2" placeholder="Nota adicional (opcional)"></textarea>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button type="submit" class="btn btn-success btn-sm flex-grow-1">Confirmar Reserva</button>
+                                        <button type="button" class="btn btn-secondary btn-sm btn-cancelar">Cancelar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 2: Mantenimiento Avanzado -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card h-100">
+                        <img src="img servicios/manteniminetoavanzado.jpg" class="card-img-top" alt="Mantenimiento Avanzado">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-primary mb-2 align-self-start">Mantenimiento</span>
+                            <h5 class="card-title">Mantenimiento Avanzado</h5>
+                            <p class="card-text text-muted flex-grow-1">Servicio completo con ajuste de suspensión, revisión de ruedas, cambio de pastillas y más.</p>
+                            <div class="mb-2">
+                                <i class="bi bi-clock text-primary me-2"></i>
+                                <span class="small">Duración: 2 horas</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-4 fw-bold text-primary">$50.00</span>
+                                <button class="btn btn-primary btn-sm btn-reservar" data-servicio="Mantenimiento Avanzado" data-precio="50.00" data-duracion="2 horas">
+                                    Reservar
+                                </button>
+                            </div>
+                            <div class="reserva-form mt-3" style="display: none;">
+                                <hr>
+                                <form class="form-reserva">
+                                    <input type="hidden" name="servicio" value="Mantenimiento Avanzado">
+                                    <input type="hidden" name="precio" value="50.00">
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control form-control-sm" placeholder="Nombre completo" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="email" class="form-control form-control-sm" placeholder="Correo electrónico" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="tel" class="form-control form-control-sm" placeholder="Teléfono" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="date" class="form-control form-control-sm" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="time" class="form-control form-control-sm" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <textarea class="form-control form-control-sm" rows="2" placeholder="Nota adicional (opcional)"></textarea>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button type="submit" class="btn btn-success btn-sm flex-grow-1">Confirmar Reserva</button>
+                                        <button type="button" class="btn btn-secondary btn-sm btn-cancelar">Cancelar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 3: Reparación de Ruedas -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card h-100">
+                        <img src="img servicios/repacionderuedas - copia.jpg" class="card-img-top" alt="Reparación de Ruedas">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-warning mb-2 align-self-start">Reparación</span>
+                            <h5 class="card-title">Reparación de Ruedas</h5>
+                            <p class="card-text text-muted flex-grow-1">Centrado de ruedas, cambio de rayos, reparación de llantas y ajuste de tensión.</p>
+                            <div class="mb-2">
+                                <i class="bi bi-clock text-primary me-2"></i>
+                                <span class="small">Duración: 1.5 horas</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-4 fw-bold text-primary">$35.00</span>
+                                <button class="btn btn-primary btn-sm btn-reservar" data-servicio="Reparación de Ruedas" data-precio="35.00" data-duracion="1.5 horas">
+                                    Reservar
+                                </button>
+                            </div>
+                            <div class="reserva-form mt-3" style="display: none;">
+                                <hr>
+                                <form class="form-reserva">
+                                    <input type="hidden" name="servicio" value="Reparación de Ruedas">
+                                    <input type="hidden" name="precio" value="35.00">
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control form-control-sm" placeholder="Nombre completo" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="email" class="form-control form-control-sm" placeholder="Correo electrónico" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="tel" class="form-control form-control-sm" placeholder="Teléfono" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="date" class="form-control form-control-sm" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="time" class="form-control form-control-sm" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <textarea class="form-control form-control-sm" rows="2" placeholder="Nota adicional (opcional)"></textarea>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button type="submit" class="btn btn-success btn-sm flex-grow-1">Confirmar Reserva</button>
+                                        <button type="button" class="btn btn-secondary btn-sm btn-cancelar">Cancelar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 4: Personalización Custom -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card h-100">
+                        <img src="img servicios/personalizacion.jpg" class="card-img-top" alt="Personalización Custom">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-danger mb-2 align-self-start">Premium</span>
+                            <h5 class="card-title">Personalización Custom</h5>
+                            <p class="card-text text-muted flex-grow-1">Armado y personalización completa de tu bicicleta con componentes a tu elección.</p>
+                            <div class="mb-2">
+                                <i class="bi bi-clock text-primary me-2"></i>
+                                <span class="small">Duración: 3-4 horas</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-4 fw-bold text-primary">$120.00</span>
+                                <button class="btn btn-primary btn-sm btn-reservar" data-servicio="Personalización Custom" data-precio="120.00" data-duracion="3-4 horas">
+                                    Reservar
+                                </button>
+                            </div>
+                            <div class="reserva-form mt-3" style="display: none;">
+                                <hr>
+                                <form class="form-reserva">
+                                    <input type="hidden" name="servicio" value="Personalización Custom">
+                                    <input type="hidden" name="precio" value="120.00">
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control form-control-sm" placeholder="Nombre completo" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="email" class="form-control form-control-sm" placeholder="Correo electrónico" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="tel" class="form-control form-control-sm" placeholder="Teléfono" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="date" class="form-control form-control-sm" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="time" class="form-control form-control-sm" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <textarea class="form-control form-control-sm" rows="2" placeholder="Nota adicional (opcional)"></textarea>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button type="submit" class="btn btn-success btn-sm flex-grow-1">Confirmar Reserva</button>
+                                        <button type="button" class="btn btn-secondary btn-sm btn-cancelar">Cancelar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón de WhatsApp -->
+    <section class="py-5 bg-success text-white">
+        <div class="container text-center">
+            <h3 class="mb-3">¿Necesitas asesoría personalizada?</h3>
+            <p class="mb-4">Conversa con uno de nuestros expertos</p>
+            <a href="https://wa.me/1234567890" target="_blank" class="btn btn-light btn-lg">
+                <i class="bi bi-whatsapp me-2"></i>Chatear por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="footer-creative pt-5 pb-4 mt-5">
+            <div class="container">
+                <div class="row">
+                    <!-- Columna del Logo/Nombre -->
+                     <div class="col-md-4 mb-4 mb-md-0">
+                        <h5 class="text-2xl font-bold mb-3 d-flex align-items-center">
+                            <span class="text-3xl me-2"></span> BikeShop
+                        </h5>
+                        <p class="text-gray-300">Tu tienda de confianza para encontrar la bicicleta perfecta. Calidad, variedad y el mejor servicio al cliente.</p>
+                    </div>
+                    <!-- Columna de Enlaces Rápidos -->
+                 
+                    <div class="col-6 col-md-2 mb-4 mb-md-0">
+                    
+                        <h5 class="font-bold mb-3 text-white">Secciones</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="index.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Inicio</a></li>
+                            <li class="mb-2"><a href="bicicletas.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Bicicletas</a></li>
+                            <li class="mb-2"><a href="accesorios.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Accesorios</a></li>
+                            <li class="mb-2"><a href="servicios.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Servicios</a></li>
+                        </ul>
+                    </div>
+                    <!-- Columna de Legal/Contacto -->
+                     <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h5 class="font-bold mb-3 text-white">Legal</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="terminos-de-uso.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Términos del Servicio</a></li>
+                            <li class="mb-2"><a href="politica-devolucion.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Política de Devoluciones</a></li>
+                            <li class="mb-2"><a href="informacion-envio.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Informacion de Envio</a></li>
+                            <li class="mb-2"><a href="proteccion-datos.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Protcción de Datos</a></li>
+                            <li class="mb-2"><a href="preguntas-frecuentes.html" style="color:white; transition:0.3s;" onmouseover="this.style.color='#00bfff'" onmouseout="this.style.color='white'">Preguntas Frecuentes</a></li>
+                        </ul>
+                    </div>
+                    <!-- Columna Síguenos (para mantener un formato consistente con el nav) -->
+                     <div class="col-md-3">
+                        <h5 class="font-bold mb-3 text-white">Síguenos o Contactanos</h5>
+                        <div class="social-icons d-none d-lg-flex align-items-center gap-3 ms-3">
+                            <a href="https://facebook.com" class="text-white fs-5" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="https://instagram.com" class="text-white fs-5" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="https://youtube.com" class="text-white fs-5" aria-label="Youtube"><i class="bi bi-youtube"></i></a>
+                            <a href="https://tiktok.com" class="text-white fs-5" aria-label="tiktok"><i class="bi bi-tiktok"></i></a>
+                        </div>
+                        <div>
+                            <p class="text-gray-300"><i class="bi bi-telephone me-2"></i>+59399999999</p>
+                            <p class="text-gray-300"><i class="bi bi-envelope me-2"></i>info@bikeshop.com</p>
+                            <p class="text-gray-300"><i class="bi bi-geo-alt me-2"></i>Av. Principal 123</p>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                      <img src="img_tarjetas.webp" 
+                      alt="Tarjetas aceptadas" 
+                      class="img-fluid" 
+                      style="max-width: 220px;">
+                    </div>
+
+                </div>
+                <hr class="my-4 border-gray-600">
+                <!-- Derechos de Autor y Slogan -->
+                 <div class="text-center">
+                    <p class="mb-0 text-sm text-gray-400">&copy; 2025. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    <!-- Modal de confirmación -->
+    <div class="modal fade" id="confirmacionModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">
+                        <i class="bi bi-check-circle me-2"></i>Reserva Exitosa
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <i class="bi bi-check-circle-fill text-success" style="font-size: 3rem;"></i>
+                    <h4 class="mt-3">¡Reserva Confirmada!</h4>
+                    <p class="text-muted">Hemos recibido tu solicitud de reserva. Te enviaremos un correo de confirmación en breve.</p>
+                    <div id="resumenReserva" class="mt-3 p-3 bg-light rounded">
+                        <!-- Se llenará dinámicamente -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script/script.js"></script>
+    <script src="jsservicio/jsservicio.js"></script>
+</body>
+</html>
